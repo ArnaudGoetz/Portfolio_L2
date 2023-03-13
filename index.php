@@ -49,9 +49,6 @@
 
       
       <section>
-        <div>
-          <img src="assets/img/Unistra.png" alt="Logo Université de Strasbourg">
-        </div>
 
         <h2>About me</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloremque voluptas quisquam perferendis omnis tempore vel blanditiis minima alias, sequi necessitatibus? Exercitationem veniam tempore omnis necessitatibus quia dolore, amet totam.
@@ -92,12 +89,9 @@
             <div> 
               
               <img src="<?= $projet['Image'] ?>" alt=" Logo Blender">
-
-              <img src="/assets/img/Scroll Down Line.png" alt="">
               
               <section>
-                <p> <?= $projet['Titre'] ?> </p>
-                <p> <?= $projet['Type'] ?></p>
+                <h3><?= $projet['Titre'] ?></h3> 
                 <p> <?= $projet['Description'] ?></p>
               </section>
             </div>

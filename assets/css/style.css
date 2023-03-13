@@ -232,23 +232,25 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5em;
+  padding: 2em;
+  width: 80%;
 }
 
 
 #work nav div img:nth-child(1){
   border-radius: 50%;
-  max-width: 90%;
   height: auto;
+  width: 40%;
   margin:0.5em;
 }
 
-#work nav div img:nth-child(2){
-  rotate:calc();
-  width: 90%;
-  max-height: 0.1em;
-  padding: 1em;
+#work nav div section{
+  max-height: fit-content;
+  width: 100%;
+  padding:0;
 }
+
+
 
 @media screen and (min-width: 992px) {
 
@@ -269,24 +271,25 @@ h2{
     display: flex;
     flex-direction: row;
     padding: 2em;
-    height:500px;
+    width: 100%;
   }
   
   
   #work nav div img:nth-child(1){
     border-radius: 50%;
-    height: 80%;
-    max-width: 50%;
-    width: auto;
+    width: 30%;
+    height: auto;
     margin:0.5em;
   }
   
-  #work nav div img:nth-child(2){
-    rotate: 90deg;
-    padding:0;
-    height: 0.1em;
-    width: 100%;
+
+  #work nav div section{
+    max-height: fit-content;
+    width: 65%;
+    text-align: left;
+    padding: 2em;
   }
+
 }
 
 #work footer{
