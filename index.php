@@ -128,12 +128,24 @@
 
       <div>
         <h2>Formulaire</h2>
-        <form method="post" >      
-          <input name="Nom du projet" type="text" class="input" placeholder="Title" />   
-          <input name="Type de projet" type="text" class="input" id="email" placeholder="Type" />
+        <form method="post" >
+          <label for="nom">
+            <input name="Nom du projet" type="text" class="input" placeholder="Title" />
+          </label>  
+
+          <label for="type">
+            <input name="Type de projet" type="text" class="input" id="type" placeholder="Type" />
+          </label>
           <p></p>
-          <textarea name="Description du projet" class="input" placeholder="Description"></textarea>
-          <input type="submit"value="SUBMIT" />
+
+          <label for="text">
+            <textarea name="Description du projet" class="input" placeholder="Description"></textarea>
+          </label>
+          
+          <label for="">
+            <input type="submit"value="SUBMIT" />
+          </label>
+          
         </form>
       </div>
 
