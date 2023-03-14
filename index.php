@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <script src="assets/js/formPost.js" defer ></script>
 </head>
 
 <body>
@@ -128,23 +130,27 @@
 
       <div>
         <h2>Formulaire</h2>
-        <form method="post" >
+        <form method="post" id ="PostForm" >
           <label for="nom">
-            <input name="Nom du projet" type="text" class="input" placeholder="Title" />
+            <input name="Nom" type="text" class="input" id="nom" placeholder="Title" />
           </label>  
 
           <label for="type">
-            <input name="Type de projet" type="text" class="input" id="type" placeholder="Type" />
+            <input name="Type" type="text" class="input" id="type" placeholder="Type" />
           </label>
           <p></p>
 
           <label for="text">
-            <textarea name="Description du projet" class="input" placeholder="Description"></textarea>
+            <textarea name="Text" class="input" id="desc" placeholder="Description"></textarea>
           </label>
+
+          <p id ="message"></p>
           
-          <label for="">
+          <label for="submit">
             <input type="submit"value="SUBMIT" />
           </label>
+
+          
           
         </form>
       </div>
