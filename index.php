@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-    <script src="assets/js/formPost.js" defer ></script>
+    <script src="assets/js/Form.js" defer ></script>
 </head>
 
 <body>
@@ -106,15 +106,17 @@
       <footer>
           <button class="button"> Load more projects </button>
           
-          <form action="get">
+          <form action="get" id ="GetForm">
 
-              <label for="text" >
-                <input name="Research" type="text" class="input"/>
-              </label>
-              
-              <label for="submit">
-                <input type="submit"value="Search" />
-              </label>
+            <label for="text" >
+              <input name="Research" type="text" class="input" id ="Research"/>
+            </label>
+
+            <p id="MessErreur"></p>
+            
+            <label for="submit">
+              <input type="submit"value="Search" />
+            </label>
 
           </form>
 
