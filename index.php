@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,12 +20,31 @@
     <section id="home" class="page" >
 
       <header>
-        <h2> My Portfolio</h2>
+        <div>
+        <?php
+          session_start();
+
+          if (isset($_GET['lang'])) {
+              $_SESSION['lang'] = $_GET['lang'];
+          }
+
+          if (!isset($_SESSION['lang'])) {
+              $_SESSION['lang'] = 'en'; // Par défaut anglais
+          }
+
+          require_once 'assets/php/'.$_SESSION['lang'].'.php';
+          ?>
+          <a href="?lang=fr"><img src="assets/img/france.png" alt="Français"></a>
+          <h2> <?php echo $lang['my_portfolio'];?></h2>
+          <a href="?lang=en"><img src="assets/img/united-kingdom.png" alt="English"></a>
+        </div>
+        
+        
         <ul>
-          <li><a class="link-1" href="#home">HOME</a></li>
-          <li><a class="link-1" href="#about">ABOUT</a></li>
-          <li><a class="link-1" href="#work">WORK</a></li>
-          <li><a class="link-1" href="#contact">CONTACT</a></li>
+          <li><a class="link-1" href="#home"><?php echo $lang['home'];?></a></li>
+          <li><a class="link-1" href="#about"><?php echo $lang['about'];?></a></li>
+          <li><a class="link-1" href="#work"><?php echo $lang['work'];?></a></li>
+          <li><a class="link-1" href="#contact"><?php echo $lang['contact'];?></a></li>
         </ul>
       </header>
 
@@ -52,7 +70,7 @@
       
       <section>
 
-        <h2>About me</h2>
+        <h2><?php echo $lang['about'];?> </h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloremque voluptas quisquam perferendis omnis tempore vel blanditiis minima alias, sequi necessitatibus? Exercitationem veniam tempore omnis necessitatibus quia dolore, amet totam.
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia mollitia consequuntur libero architecto tenetur rem nemo! Cum, magnam est omnis repellat eligendi, et facilis sed voluptas, debitis ratione animi itaque!</p>    
       
@@ -60,7 +78,7 @@
           <img src="assets/img/blend2.png" alt="Logo de blender">
         </div>
 
-        <h2> My Skills </h2>
+        <h2> <?php echo $lang['my_skills'];?> </h2>
         
         <ul>
           <li> Blender  </li>
@@ -80,7 +98,7 @@
 
     <section id = "work" >
       <header>
-        <h2> MY WORK</h2>
+        <h2><?php echo $lang['work'];?></h2>
       </header>
       <nav>
         <?php
@@ -104,7 +122,7 @@
       </nav>
 
       <footer>
-          <button class="button"> Load more projects </button>
+          <button class="button"> <?php echo $lang['load_more_projects'];?></button>
           
           <form action="get" id ="GetForm">
 
@@ -113,9 +131,9 @@
             </label>
 
             <p id="MessErreur"></p>
-            
+
             <label for="submit">
-              <input type="submit"value="Search" />
+              <input type="submit" value=" <?php echo $lang['form_search'];?>" />
             </label>
 
           </form>
@@ -126,7 +144,7 @@
 
     <section id="contact" class="page">
       <div>
-        <h2> CREATE PROJECTS</h2>
+        <h2><?php echo $lang['create_projects'];?></h2>
         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur ad similique ipsam quo aut qui natus ut, aspernatur enim suscipit ex neque aliquid tempore architecto quidem laboriosam numquam tempora nobis!</p>
       </div>
 
@@ -134,11 +152,11 @@
         <h2>Formulaire</h2>
         <form method="post" id ="PostForm" >
           <label for="nom">
-            <input name="Nom" type="text" class="input" id="nom" placeholder="Title" />
+            <input name="Nom" type="text" class="input" id="nom" placeholder="<?php echo $lang['form_title'];?>" />
           </label>  
 
           <label for="type">
-            <input name="Type" type="text" class="input" id="type" placeholder="Type" />
+            <input name="Type" type="text" class="input" id="type" placeholder="<?php echo $lang['form_type'];?>" />
           </label>
           <p></p>
 
@@ -149,7 +167,7 @@
           <p id ="message"></p>
           
           <label for="submit">
-            <input type="submit"value="SUBMIT" />
+            <input type="submit" value="<?php echo $lang['form_submit'];?>" />
           </label>
 
           

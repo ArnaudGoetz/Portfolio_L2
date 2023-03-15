@@ -87,6 +87,19 @@ h2{
   text-align: center;
 }
 
+#home header div {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+
+
+#home header div img{
+  height: 2em;
+  width: auto;
+}
+
 #home header ul {
   padding: 0;
   display: flex;
