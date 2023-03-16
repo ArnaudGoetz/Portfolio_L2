@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (description.value.length > 500) {
-            message.innerHTML = 'Le champ description ne doit pas contenir plus de 500 caractères.';
+        if (description.value.length > 300) {
+            message.innerHTML = 'Le champ description ne doit pas contenir plus de 300 caractères.';
             return;
         }
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (Text.value.length > 50) {
-            messErreur.innerHTML = 'Le champ derecherche ne doit pas contenir plus de 50 caractères.';
+            messErreur.innerHTML = 'Le champ de recherche ne doit pas contenir plus de 50 caractères.';
             return;
         }
 

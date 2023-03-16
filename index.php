@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,11 +26,11 @@
           session_start();
 
           if (isset($_GET['lang'])) {
-              $_SESSION['lang'] = $_GET['lang'];
+            $_SESSION['lang'] = $_GET['lang'];
           }
 
           if (!isset($_SESSION['lang'])) {
-              $_SESSION['lang'] = 'en'; // Par défaut anglais
+            $_SESSION['lang'] = 'en'; // Par défaut anglais
           }
 
           require_once 'assets/php/'.$_SESSION['lang'].'.php';
@@ -38,7 +39,6 @@
           <h2> <?php echo $lang['my_portfolio'];?></h2>
           <a href="?lang=en"><img src="assets/img/united-kingdom.png" alt="English"></a>
         </div>
-        
         
         <ul>
           <li><a class="link-1" href="#home"><?php echo $lang['home'];?></a></li>
@@ -124,7 +124,7 @@
       <footer>
           <button class="button"> <?php echo $lang['load_more_projects'];?></button>
           
-          <form action="get" id ="GetForm">
+          <form method="get" id ="GetForm">
 
             <label for="text" >
               <input name="Research" type="text" class="input" id ="Research"/>
@@ -150,7 +150,14 @@
 
       <div>
         <h2>Formulaire</h2>
-        <form method="post" id ="PostForm" >
+        <?php
+          require_once __DIR__ . "/assets/models/Projet.php";
+          if (isset($_POST['Title']) && isset($_POST['Type']) && isset($_POST['Description'])){
+            $post = new Projet();
+            $post->createPost($_POST['Title'], $_POST['Type'], $_POST['Description']);
+          }
+        ?>
+        <form  method="post" id ="PostForm" >
           <label for="nom">
             <input name="Nom" type="text" class="input" id="nom" placeholder="<?php echo $lang['form_title'];?>" />
           </label>  
