@@ -27,11 +27,11 @@ class Projet extends Database{
     }
 
     private function checkTitle(string $Title):bool{
-        return $title.trim() !== '' &&  strlen($Title) <= 255;
+        return $Title !== '' &&  strlen($Title) <= 255;
     }
 
     private function checkType(string $Type): bool{
-        return $Type.trim() !== '' &&  strlen($Type) <= 255;
+        return $Type !== '' &&  strlen($Type) <= 255;
     }
 
     private function checkDescription(string $Description): bool{
@@ -40,7 +40,7 @@ class Projet extends Database{
 
     public function createPost(string $Title, string $Type, string $Description){
         if($this->checkTitle($Title) && $this->checkType($Type) && $this->checkDescription($Description)){
-            $new = this->pdo->prepare(
+            $new = $this->pdo->prepare(
                 "INSERT INTO Projet ('Title','Type','Description') VALUES (:Title, :Type, :Description )"
             );
             $new->bindValue(':Title', htmlspecialchars($Title));
