@@ -37,6 +37,9 @@ class Projet extends Database{
     private function checkDescription(string $Description): bool{
         return $Description !== '' &&  strlen($Description) <= 300;
     }
+    private function checkSearch(string $Search): bool{
+        return $Search !== '' && strlen($Search) <= 50;
+    }
 
     public function createPost(string $Title, string $Type, string $Description){
         if($this->checkTitle($Title) && $this->checkType($Type) && $this->checkDescription($Description)){
@@ -49,7 +52,16 @@ class Projet extends Database{
             $new->execute();
         }
     }
-
+    public function getProjectsFilter(string $Search){
+        if($this->checkSearch($Search)){
+            $input = $this->pdo->prepare(
+                "SELECT * FROM Projet WHERE Title LIKE :1 OR Type LIKE :1 OR Description LIKE :1"
+            );
+            $input->bindValue(':1',htmlspecialchars('%'.$Search.'%'));
+            $input->execute();
+        }
+        return $input->fetchAll();
+    }
 }
    
 

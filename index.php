@@ -18,10 +18,15 @@
     require_once __DIR__ . "/assets/models/Projet.php";
 
     $table = new Projet();
-    var_dump($_POST);
+
     if (isset($_POST['Title']) && isset($_POST['Type']) && isset($_POST['Description'])){
       $table->createPost($_POST['Title'], $_POST['Type'], $_POST['Description']);
     }
+
+    if(isset($_GET['Research'])){
+      $projets = $table->getProjectsFilter($_GET['Research']);
+    }
+    else $projets = $table->getAllProjects();
 
   ?>
 
@@ -112,16 +117,28 @@
         <header>
           <h2><?php echo $lang['work'];?></h2>
         </header>
+        <div>
+          <form action ="#work" method="get" id ="GetForm">
+            <label for="text" >
+              <input name="Research" type="text" class="input" id ="Research"/>
+            </label>
+
+            <p id="MessErreur"></p>
+
+            <label for="submit">
+              <input type="submit" value=" <?php echo $lang['form_search'];?>" />
+            </label>
+          </form>
+        </div>
         <nav>
           <?php
-            foreach($table->getAllProjects() as $projet) :
+            foreach($projets as $projet) :
               ?>
               <div> 
-                
                 <img src="<?= $projet['Image'] ?>" alt=" Logo Blender">
                 
                 <section>
-                  <h3><?= $projet['Titre'] ?></h3> 
+                  <h3><?= $projet['Title'] ?></h3> 
                   <p> <?= $projet['Description'] ?></p>
                 </section>
               </div>
@@ -132,21 +149,8 @@
         </nav>
 
         <footer>
-            <button class="button"> <?php echo $lang['load_more_projects'];?></button>
-            
-            <form method="get" id ="GetForm">
 
-              <label for="text" >
-                <input name="Research" type="text" class="input" id ="Research"/>
-              </label>
-
-              <p id="MessErreur"></p>
-
-              <label for="submit">
-                <input type="submit" value=" <?php echo $lang['form_search'];?>" />
-              </label>
-
-            </form>
+          <button class="button"> <?php echo $lang['load_more_projects'];?></button>
 
         </footer>
 

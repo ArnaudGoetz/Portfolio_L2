@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formGet.submit();
     }
 
-
     formPost.addEventListener('submit', validerFormulairePost);
     formGet.addEventListener('submit',validerFormulaireGet);
 });
