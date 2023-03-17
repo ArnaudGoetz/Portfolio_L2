@@ -15,6 +15,7 @@ $lang = array(
     'form_description' => 'Description',
     'form_submit' => 'Submit',
     'form_search' => 'Search',
+    'form'=>'Form',
 );
 
 ?>

@@ -34,7 +34,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Titre ICI</title>
+      <title>Projet Web</title>
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,16 +113,16 @@
 
       </section>
 
-      <section id = "work" >
+      <section id = "work">
         <header>
           <h2><?php echo $lang['work'];?></h2>
         </header>
         <div>
           <form action ="#work" method="get" id ="GetForm">
-            <label for="text" >
-              <input name="Research" type="text" class="input" id ="Research"/>
+            <label for="Research" >
+              <?php echo $lang['form_search'];?>:
             </label>
-
+            <input name="Research" type="text" class="input" id ="Research"/>
             <p id="MessErreur"></p>
 
             <label for="submit">
@@ -163,20 +163,23 @@
         </div>
 
         <div>
-          <h2>Formulaire</h2>
+          <h2><?php echo $lang['form'];?></h2>
 
           <form method="post" id ="PostForm" >
             <label for="Title">
-              <input name="Title" type="text" class="input" id="nom" placeholder="<?php echo $lang['form_title'];?>" />
+              <?php echo $lang['form_title'];?>
+              <input name="Title" type="text" class="input" id="nom" />
             </label>  
 
             <label for="Type">
-              <input name="Type" type="text" class="input" id="type" placeholder="<?php echo $lang['form_type'];?>" />
+              <?php echo $lang['form_type'];?>
+              <input name="Type" type="text" class="input" id="type"  />
             </label>
             <p></p>
 
             <label for="Description">
-              <textarea name="Description" class="input" id="desc" placeholder="Description"></textarea>
+              <?php echo $lang['form_description'];?>
+              <textarea name="Description" class="input" id="desc" ></textarea>
             </label>
 
             <p id ="message"></p>

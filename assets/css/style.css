@@ -306,6 +306,10 @@ font-weight:700;
   margin: 1em;
 }
 
+#work div form label:nth-child(1){
+  display: none;
+}
+
 #work div form label input{
   width: 100%;
 }
@@ -378,6 +382,7 @@ form { max-width:60vw; margin:50px auto; }
   transition: all 0.3s;
   padding: 1em;
   margin-bottom: 15px;
+  margin-top: 7px;
   width:100%;
   box-sizing: border-box;
   outline:0;
