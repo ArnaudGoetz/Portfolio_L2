@@ -231,6 +231,10 @@ h2{
   align-items: center;
 }
 
+#work header{
+  padding-top: 2em;
+}
+
 #work nav {
   display: grid;
   grid-template-columns: 1fr;
@@ -386,7 +390,7 @@ form { max-width:60vw; margin:50px auto; }
   width:100%;
   box-sizing: border-box;
   outline:0;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 .input:focus { border:3px solid #CC4949; }
