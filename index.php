@@ -26,7 +26,7 @@
     if(isset($_GET['Research'])){
       $projets = $table->getProjectsFilter($_GET['Research']);
     }
-    else $projets = $table->getAllProjects();
+    else $projets = $table->getnProjects();
 
   ?>
 
@@ -42,6 +42,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
       <script src="assets/js/Form.js" defer ></script>
+      <script src="assets/js/ajax.js" defer ></script>
+
   </head>
 
   <body>
@@ -150,7 +152,7 @@
 
         <footer>
 
-          <button class="button"> <?php echo $lang['load_more_projects'];?></button>
+          <button class="button" id="ajax"> <?php echo $lang['load_more_projects'];?></button>
 
         </footer>
 

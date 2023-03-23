@@ -26,6 +26,16 @@ class Projet extends Database{
         return $this->projects;
     }
 
+    public function getnprojects():array{
+        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT 6')->fetchAll();
+        return $this->projects;
+    }
+
+    public function ajaxProjects(int $offset ):array{
+        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT 2 OFFSET $offset')->fetchAll();
+        return $this->projects;
+    }
+
     private function checkTitle(string $Title):bool{
         return $Title !== '' &&  strlen($Title) <= 255;
     }
