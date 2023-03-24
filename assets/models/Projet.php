@@ -5,6 +5,7 @@ require_once __DIR__ . '/Database.php';
 class Projet extends Database{
 
     protected $projects;
+    protected $length;
 
     
     public function __construct(){
@@ -26,15 +27,20 @@ class Projet extends Database{
         return $this->projects;
     }
 
-    public function getnprojects():array{
-        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT 6')->fetchAll();
+    public function getnprojects(int $init):array{
+        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT '.$init)->fetchAll();
         return $this->projects;
     }
 
     public function ajaxProjects(int $offset ):array{
-        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT 2 OFFSET $offset')->fetchAll();
+        $this->projects = $this->pdo->query('SELECT * FROM Projet LIMIT 2 OFFSET '.$offset)->fetchAll();
         return $this->projects;
     }
+
+    /*public function numberOfProjects():int{
+        $this->length = $this->pdo->query('SELECT COUNT(*) FROM Projet')->fetchAll();
+        return $this->length;
+    }*/
 
     private function checkTitle(string $Title):bool{
         return $Title !== '' &&  strlen($Title) <= 255;

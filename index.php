@@ -26,7 +26,7 @@
     if(isset($_GET['Research'])){
       $projets = $table->getProjectsFilter($_GET['Research']);
     }
-    else $projets = $table->getnProjects();
+    else $projets = $table->getnProjects(4);
 
   ?>
 
@@ -132,7 +132,7 @@
             </label>
           </form>
         </div>
-        <nav>
+        <nav id='projets'>
           <?php
             foreach($projets as $projet) :
               ?>
@@ -147,7 +147,6 @@
           <?php
             endforeach;
           ?>
-
         </nav>
 
         <footer>
