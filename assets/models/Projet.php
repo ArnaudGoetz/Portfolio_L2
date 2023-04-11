@@ -37,10 +37,12 @@ class Projet extends Database{
         return $this->projects;
     }
 
-    /*public function numberOfProjects():int{
+    public function numberOfProjects():int{
         $this->length = $this->pdo->query('SELECT COUNT(*) FROM Projet')->fetchAll();
         return $this->length;
-    }*/
+    }
+
+    
 
     private function checkTitle(string $Title):bool{
         return $Title !== '' &&  strlen($Title) <= 255;
@@ -78,6 +80,7 @@ class Projet extends Database{
         }
         return $input->fetchAll();
     }
+
 }
    
 

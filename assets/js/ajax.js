@@ -1,25 +1,31 @@
 
 let i = 4;
 
-document.querySelector('button').addEventListener("click",async() => {
+
+
+document.querySelector('#ajax').addEventListener("click",async() => {
     try{
         console.log('Avant le fetch');
         const response = await fetch('/assets/php/server.php?i='+ i);
         i+=2;
         console.log('apres fetch');
         let datajson = await response.text();
+
         let datadec = JSON.parse(datajson);
         console.log(datadec);
 
-        var areaprojets = document.querySelector('#projets');
+        let areaprojets = document.querySelector('#projets');
+        let button = document.querySelector('#ajax');
 
-        for(const proj of datadec){
+        if (datadec.length != 0){
 
-            var newdiv = document.createElement('div');
-            var newimg = document.createElement('img');
-            var newsec = document.createElement('section');
-            var newh3 = document.createElement('h3');
-            var newp = document.createElement('p');
+            for(const proj of datadec){
+
+            let newdiv = document.createElement('div');
+            let newimg = document.createElement('img');
+            let newsec = document.createElement('section');
+            let newh3 = document.createElement('h3');
+            let newp = document.createElement('p');
 
             areaprojets.appendChild(newdiv);
             newdiv.appendChild(newimg);
@@ -29,12 +35,16 @@ document.querySelector('button').addEventListener("click",async() => {
             
 
             newimg.src = "/assets/img/blend2.png"
-            newimg.alt = "Logo Blender"
+            newimg.alt = "Logo du logiciel Blender"
             newh3.innerText = proj['Title'];
             newp.innerText = proj['Description'];
 
+            }
         }
-        
+
+        else{
+            button.innerHTML = "No more Projects";
+        }
     } 
 
     catch (error) {

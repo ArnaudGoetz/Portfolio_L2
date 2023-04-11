@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <?php
     session_start();
@@ -19,6 +19,8 @@
 
     $table = new Projet();
 
+    
+
     if (isset($_POST['Title']) && isset($_POST['Type']) && isset($_POST['Description'])){
       $table->createPost($_POST['Title'], $_POST['Type'], $_POST['Description']);
     }
@@ -34,7 +36,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Projet Web</title>
+      <title>Mon Projet Web</title>
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +56,9 @@
 
         <header>
           <div>
-            <a href="?lang=fr"><img src="assets/img/france.png" alt="Français"></a>
+            <a href="?lang=fr"><img src="assets/img/france.png" alt="Drapeau français pour la selection de la langue"></a>
             <h2> <?php echo $lang['my_portfolio'];?></h2>
-            <a href="?lang=en"><img src="assets/img/united-kingdom.png" alt="English"></a>
+            <a href="?lang=en"><img src="assets/img/united-kingdom.png" alt="Drapeau anglais pour la selection de la langue"></a>
           </div>
           
           <ul>
@@ -94,7 +96,7 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia mollitia consequuntur libero architecto tenetur rem nemo! Cum, magnam est omnis repellat eligendi, et facilis sed voluptas, debitis ratione animi itaque!</p>    
         
           <div>
-            <img src="assets/img/blend2.png" alt="Logo de blender">
+            <img src="assets/img/blend2.png" alt="Logo du logiciel blender">
           </div>
 
           <h2> <?php echo $lang['my_skills'];?> </h2>
@@ -152,7 +154,7 @@
         <footer>
 
           <button class="button" id="ajax"> <?php echo $lang['load_more_projects'];?></button>
-
+            
         </footer>
 
       </section>

@@ -8,37 +8,9 @@ body {
   line-height: 1.3em;
 
 }
-@media screen and (max-width: 600px) {
-  body{
-    font-size: 1.1em;
-  }
+.displaynone{
+  display: none;
 }
-
-@media only screen and (min-width: 768px) {
-  body {
-    font-size: 1.2em;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  body{
-    font-size: 1.3em;
-  }
-}
-
-@media screen and (min-width: 1268px) {
-  body{
-    font-size: 1.4em;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  body{
-    font-size: 1.6em;
-  }
-}
-
- 
 
 p{
 padding: 0.5em;
@@ -426,7 +398,7 @@ input.error {
 
 @media screen and (max-width: 600px) {
   body{
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 
